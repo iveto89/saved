@@ -1,0 +1,50 @@
+<div class="">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" (click)="dialogRef.close()">&times;</button>
+            <h4 class="modal-title">
+                Add link
+            </h4>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="addLinkForm" novalidate>
+
+                <div class="row form-group">
+                    <label class="col-md-10">
+                        Title:
+                        <input type="text" class="form-control" formControlName="title"/>
+                    </label>
+                </div>
+
+                <div class="row form-group">
+                    <label class="col-md-10">
+                        Url:
+                        <input type="text" class="form-control" formControlName="url"/>
+                    </label>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-1 pull-left"><label>Private:</label></div>
+                    <div class="col-md-1 pull-left">
+                        <input type="checkbox" formControlName="is_private"/>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button (click)="addLink()" type="submit" class="btn btn-primary submit-button"
+                            [disabled]="!addLinkForm.valid">Save Link
+                    </button>
+                    <button mat-raised-button (click)="cancel()" type="button" class="btn btn-default">Cancel</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+

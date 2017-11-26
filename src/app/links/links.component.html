@@ -1,0 +1,58 @@
+<div class="container app-header">
+    <div class="row logo-wrapper">
+        <div class="col-md-5">
+            <div class="logo"><a href="#">Saved</a></div>
+        </div>
+        <div class="col-md-7 pull-right">
+            <div class="row logo-wrapper">
+                <button class="col-md-offset-4 col-md-4 add-link" (click)="open('add-link')">Add Link</button>
+                <div class="col-md-offset-2 col-md-8 profile-dashboard dropdown">
+            <span class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="true">
+            User's email<span class="caret"></span>
+            </span>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">My Links</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container show-links">
+    <div class="row inner-content">
+        <div class="col-md-10">
+            <div class="user-link"
+                 *ngFor="let link of links | paginate: { itemsPerPage: 5, currentPage: page, totalItems: total }">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4> {{ link.title }}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <a [href]="link.url | safe: 'url'" target="_blank">{{ link.url }}</a>
+                    </div>
+                    <div class="col-md-2">
+                        {{ link.created_at | date: 'dd/MM/yyyy' }}
+                    </div>
+                    <div class="col-md-2">
+                        <a class="link-button" (click)="open('edit-link', link)" id="edit-link">Edit</a>
+                        <a class="link-button" (click)="deleteLink(link)">Delete</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row link-pagination">
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
+
+

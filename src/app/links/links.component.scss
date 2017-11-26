@@ -1,0 +1,41 @@
+.logo {
+  font-size: 28px;
+  color: #337ab7;
+  text-decoration: none;
+}
+.add-link {
+  color:#fff;
+  background-color: #1abc9c;
+  cursor: pointer;
+  text-align:center;
+  border:1px solid #30c2a5;
+  padding: 10px;
+}
+.add-link:hover {
+  background-color: #30c2a5;
+}
+.profile-dashboard {
+  text-align:right;
+}
+.container {
+  margin-top: 30px;
+}
+.app-header {
+  margin-bottom: 50px;
+}
+.user-link {
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  min-height:70px;
+  padding: 13px 0;
+}
+.link-button {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.link-button:hover,.link-button:active  {
+  text-decoration: none;
+}
+.link-pagination {
+  margin-top: 30px;
+}
