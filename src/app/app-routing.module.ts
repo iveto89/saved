@@ -8,7 +8,7 @@ import { EditLinkComponent } from './edit-link/edit-link.component';
 const routes: Routes = [
     {
         path: '',
-        redirectTo: "/links",
+        redirectTo: '/links',
         pathMatch: 'full'
     },
     {

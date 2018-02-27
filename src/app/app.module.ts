@@ -10,7 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MatDialogModule, MatButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AddLinkComponent } from "./add-link/add-link.component";
+import { AddLinkComponent } from './add-link/add-link.component';
 import { LinkService } from './add-link/link.service';
 import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { LinksService } from './links/links.service';

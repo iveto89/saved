@@ -1,7 +1,7 @@
 import { LinksService } from './links.service';
 import { Component, Inject, OnInit, ViewContainerRef } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
-import { AddLinkComponent } from "../add-link/add-link.component";
+import { AddLinkComponent } from '../add-link/add-link.component';
 import { EditLinkComponent } from '../edit-link/edit-link.component';
 import { Subject } from 'rxjs/Subject';
 import { LinkService } from '../add-link/link.service';
@@ -21,7 +21,7 @@ export class LinksComponent implements OnInit {
 
     public links = [];
 
-    page: number = 1;
+    page = 1;
 
     total: number = null;
 
@@ -41,12 +41,12 @@ export class LinksComponent implements OnInit {
             .subscribe(links => {
                 this.links = links;
                 this.total = links.length;
-            })
+            });
     }
 
 
     deleteLink(link) {
-        if (confirm("Are you sure you want to delete this link?")) {
+        if (confirm('Are you sure you want to delete this link?')) {
             this.linkService.deleteLink(link.id).subscribe(
                 value => {
                     this.updateLinks();
