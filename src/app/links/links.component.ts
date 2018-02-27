@@ -40,7 +40,7 @@ export class LinksComponent implements OnInit {
         this.linksService.showLinks()
             .subscribe(links => {
                 this.links = links;
-                this.total = links.length;
+                this.total = links ? links.length : 0;
             });
     }
 
@@ -60,7 +60,7 @@ export class LinksComponent implements OnInit {
     updateLinks(): void {
         this.linksService.showLinks().subscribe(data => {
             this.links = data;
-            this.total = data.length;
+            this.total = data ? data.length : 0;
         });
     }
 
@@ -73,7 +73,7 @@ export class LinksComponent implements OnInit {
         const subject = new Subject();
         this.dialogRef.afterClosed().subscribe(result => {
             this.links = this.dialogRef.componentInstance.links;
-            this.total = this.links.length;
+            this.total = this.links ? this.links.length : 0;
             this.dialogRef = null;
             subject.next();
 
